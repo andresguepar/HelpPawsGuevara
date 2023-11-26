@@ -10,18 +10,18 @@ import java.util.List;
 public class DonationMapper {
         public static DonationDto mapFrom(Donation source){
             return new DonationDto(source.getId(),
-                    source.getUser(),
+                    source.getName(),
                     source.getAmount(),
-                    source.getAddress(),
+                    source.getPayMethod(),
                     source.getDate(),
                     source.getFoundation());
         }
 
         public static Donation mapFrom(DonationDto source){
             return new Donation(source.id(),
-                    source.user(),
+                    source.name(),
                     source.amount(),
-                    source.address(),
+                    source.payMethod(),
                     source.date(),
                     source.foundation());
         }

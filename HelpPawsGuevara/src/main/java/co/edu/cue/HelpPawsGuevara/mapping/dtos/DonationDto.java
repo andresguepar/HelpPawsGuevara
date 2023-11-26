@@ -2,14 +2,15 @@ package co.edu.cue.HelpPawsGuevara.mapping.dtos;
 
 import co.edu.cue.HelpPawsGuevara.domain.entities.Foundation;
 import co.edu.cue.HelpPawsGuevara.domain.entities.User;
-import jakarta.persistence.OneToOne;
+import co.edu.cue.HelpPawsGuevara.domain.enums.PayMethod;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public record DonationDto ( Long id,
-                            User user,
-                            Double amount,
-                            String address,
-                            Date date,
-                            Foundation foundation){
+public record DonationDto (int id,
+                           String name,
+                           Double amount,
+                           PayMethod payMethod,
+                           java.time.LocalDate date,
+                           Foundation foundation){
+
 }
