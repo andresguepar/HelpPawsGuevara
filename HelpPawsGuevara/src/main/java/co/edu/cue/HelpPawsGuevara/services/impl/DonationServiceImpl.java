@@ -1,12 +1,10 @@
 package co.edu.cue.HelpPawsGuevara.services.impl;
 
 import co.edu.cue.HelpPawsGuevara.domain.entities.Donation;
-import co.edu.cue.HelpPawsGuevara.domain.entities.User;
 import co.edu.cue.HelpPawsGuevara.mapping.dtos.DonationDto;
-import co.edu.cue.HelpPawsGuevara.mapping.dtos.UserDto;
+import co.edu.cue.HelpPawsGuevara.mapping.mappers.DonationMapper;
 import co.edu.cue.HelpPawsGuevara.repositories.DonationRepository;
 import co.edu.cue.HelpPawsGuevara.services.DonationService;
-import co.edu.cue.HelpPawsGuevara.services.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,22 +17,27 @@ public class DonationServiceImpl implements DonationService {
     }
 
     @Override
-    public List<Donation> list() {
-        return (List<Donation>) repository.findAll();
+    public List<DonationDto> list() {
+        List<Donation> donation = (List<Donation>) repository.findAll();
+        List<DonationDto> donationDto = DonationMapper.mapFromDto(donation);
+        return donationDto ;
     }
 
     @Override
-    public Donation byId(int id) {
-        return repository.findById(id).orElseThrow();
+    public DonationDto byId(Integer id) {
+        Donation donation = repository.findById(id).orElseThrow();
+        DonationDto donationDto = DonationMapper.mapFrom(donation);
+        return donationDto;
     }
 
     @Override
-    public void save(Donation t) {
-        repository.save(t);
+    public void save(DonationDto t) {
+        Donation donation = DonationMapper.mapFrom(t);
+        repository.save(donation);
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
 
     }
 }

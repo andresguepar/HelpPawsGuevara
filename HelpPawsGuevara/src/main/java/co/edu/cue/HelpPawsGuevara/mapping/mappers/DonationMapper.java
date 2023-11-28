@@ -1,12 +1,11 @@
 package co.edu.cue.HelpPawsGuevara.mapping.mappers;
 
 import co.edu.cue.HelpPawsGuevara.domain.entities.Donation;
-import co.edu.cue.HelpPawsGuevara.domain.entities.User;
 import co.edu.cue.HelpPawsGuevara.mapping.dtos.DonationDto;
-import co.edu.cue.HelpPawsGuevara.mapping.dtos.UserDto;
+import lombok.Builder;
 
 import java.util.List;
-
+@Builder
 public class DonationMapper {
         public static DonationDto mapFrom(Donation source){
             return new DonationDto(source.getId(),

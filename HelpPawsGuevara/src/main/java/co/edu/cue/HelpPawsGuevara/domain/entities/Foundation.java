@@ -1,7 +1,10 @@
 package co.edu.cue.HelpPawsGuevara.domain.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
@@ -12,7 +15,7 @@ import lombok.*;
 public class Foundation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private String address;
     private String phone;
