@@ -19,15 +19,13 @@ public class DonationServiceImpl implements DonationService {
     @Override
     public List<DonationDto> list() {
         List<Donation> donation = (List<Donation>) repository.findAll();
-        List<DonationDto> donationDto = DonationMapper.mapFromDto(donation);
-        return donationDto ;
+        return DonationMapper.mapFromDto(donation);
     }
 
     @Override
     public DonationDto byId(int id) {
         Donation donation = repository.findById(id).orElseThrow();
-        DonationDto donationDto = DonationMapper.mapFrom(donation);
-        return donationDto;
+        return DonationMapper.mapFrom(donation);
     }
 
     @Override

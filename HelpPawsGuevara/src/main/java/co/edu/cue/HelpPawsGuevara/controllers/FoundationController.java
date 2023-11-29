@@ -18,8 +18,7 @@ public class FoundationController {
     }
     @GetMapping("/foundation/create")
     public ModelAndView createFoundation(){
-        ModelAndView modelAndView = new ModelAndView("formFoundation");
-        return modelAndView;
+        return new ModelAndView("formFoundation");
     }
     @GetMapping("/foundation/list")
     public ModelAndView listFoundation(){

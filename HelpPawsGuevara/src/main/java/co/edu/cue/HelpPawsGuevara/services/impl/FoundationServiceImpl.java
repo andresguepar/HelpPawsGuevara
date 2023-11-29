@@ -21,24 +21,21 @@ public class FoundationServiceImpl implements FoundationService {
     @Override
     public List<FoundationDto> list() {
         List<Foundation> foundation = (List<Foundation>) repository.findAll();
-        List<FoundationDto> foundationDto = FoundationMapper.mapFromDto(foundation);
-        return foundationDto;
+        return FoundationMapper.mapFromDto(foundation);
 
     }
 
     @Override
     public FoundationDto byId(int id) {
         Foundation foundation = repository.findById(id).orElseThrow();
-        FoundationDto foundationDto = FoundationMapper.mapFrom(foundation);
-        return foundationDto;
+        return FoundationMapper.mapFrom(foundation);
     }
 
     @Override
     public FoundationDto get(int id) {
         Optional<Foundation> foundationOp = repository.findById(id);
         Foundation foundation = foundationOp.get();
-        FoundationDto foundationDto = FoundationMapper.mapFrom(foundation);
-        return foundationDto;
+        return FoundationMapper.mapFrom(foundation);
     }
 
     @Override
@@ -63,8 +60,7 @@ public class FoundationServiceImpl implements FoundationService {
 
 
     @Override
-    public void delete(int id) {
-        Long count = repository.countById(id);
+    public void delete(int id) {;
         repository.deleteById(id);
     }
 }
