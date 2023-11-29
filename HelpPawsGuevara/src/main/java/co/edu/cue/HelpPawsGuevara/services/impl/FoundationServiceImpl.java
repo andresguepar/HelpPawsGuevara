@@ -27,14 +27,14 @@ public class FoundationServiceImpl implements FoundationService {
     }
 
     @Override
-    public FoundationDto byId(Integer id) {
+    public FoundationDto byId(int id) {
         Foundation foundation = repository.findById(id).orElseThrow();
         FoundationDto foundationDto = FoundationMapper.mapFrom(foundation);
         return foundationDto;
     }
 
     @Override
-    public FoundationDto get(Integer id) {
+    public FoundationDto get(int id) {
         Optional<Foundation> foundationOp = repository.findById(id);
         Foundation foundation = foundationOp.get();
         FoundationDto foundationDto = FoundationMapper.mapFrom(foundation);
@@ -49,7 +49,7 @@ public class FoundationServiceImpl implements FoundationService {
     }
 
     @Override
-    public void update(Integer id, FoundationDto updatedD) {
+    public void update(int id, FoundationDto updatedD) {
 
         Foundation foundation = repository.findById(id).orElseThrow();
         Foundation updated = FoundationMapper.mapFrom(updatedD);
@@ -63,7 +63,7 @@ public class FoundationServiceImpl implements FoundationService {
 
 
     @Override
-    public void delete(Integer id) {
+    public void delete(int id) {
         Long count = repository.countById(id);
         repository.deleteById(id);
     }

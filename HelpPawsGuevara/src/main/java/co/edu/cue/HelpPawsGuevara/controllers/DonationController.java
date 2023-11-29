@@ -43,7 +43,7 @@ public class DonationController {
     @PostMapping("donation/new")
     public String createNewDonation(@RequestParam("name") String name,
                                     @RequestParam("amount") Double amount,
-                                    @RequestParam("foundation") Integer foundationId,
+                                    @RequestParam("foundation") int foundationId,
                                     @RequestParam("payMethod") String payMethod){
 
         DonationDto donationDto = DonationDto.builder()

@@ -64,6 +64,18 @@
             background-color: #0a7d77;
         }
 
+        .banner {
+            background-color: #252f48;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .banner img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
         .footer {
             background-color: #1bbcb6;
             color: white;
@@ -77,12 +89,17 @@
 <header>
     <h1>HelpPaws</h1>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Categories</a>
-        <a href="#">Contact</a>
+        <a href="/">Home</a>
+        <a href="/donation/list">Donation List</a>
+        <a href="/foundation/list">Foundation List</a>
     </nav>
 </header>
+
+<section class="banner">
+    <h2>Supporting Animals in Need</h2>
+    <p>Your contribution makes a difference!</p>
+    <!--<img src="cat.jpg" alt="Banner Image">-->
+</section>
 
 <section>
     <div class="container">
@@ -90,9 +107,13 @@
         <p>Your contribution helps animals in need.</p>
         <div class="donate-form">
             <a href="/donation/create" class="btn btn-donate">Donate Now</a>
-
         </div>
     </div>
+</section>
+<section class="banner">
+    <h2>Make a pawsitive impact today!</h2>
+    <p>Your donation is a lifeline for animals, bringing hope, healing, and happiness to those in need.</p>
+   <!-- <img src="/pets.jpg" alt="Banner Image">-->
 </section>
 
 <section class="footer" id="foot">

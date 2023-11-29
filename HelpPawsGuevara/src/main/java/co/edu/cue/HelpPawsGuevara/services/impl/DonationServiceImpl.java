@@ -24,7 +24,7 @@ public class DonationServiceImpl implements DonationService {
     }
 
     @Override
-    public DonationDto byId(Integer id) {
+    public DonationDto byId(int id) {
         Donation donation = repository.findById(id).orElseThrow();
         DonationDto donationDto = DonationMapper.mapFrom(donation);
         return donationDto;
@@ -37,7 +37,7 @@ public class DonationServiceImpl implements DonationService {
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(int id) {
 
     }
 }

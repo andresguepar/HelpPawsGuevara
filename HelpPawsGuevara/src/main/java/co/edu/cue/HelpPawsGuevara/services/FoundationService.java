@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface FoundationService {
     List<FoundationDto> list();
-    FoundationDto byId(Integer id);
-    FoundationDto get(Integer id);
+    FoundationDto byId(int id);
+    FoundationDto get(int id);
     void save(FoundationDto t);
-    void update(Integer id, FoundationDto updated);
-    void delete(Integer id);
+    void update(int id, FoundationDto updated);
+    void delete(int id);
 
 }

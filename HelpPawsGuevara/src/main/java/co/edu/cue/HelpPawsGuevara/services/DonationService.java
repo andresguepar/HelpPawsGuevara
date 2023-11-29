@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface DonationService {
     List<DonationDto> list();
-    DonationDto byId(Integer id);
+    DonationDto byId(int id);
     void save(DonationDto t);
-    void delete(Integer id);
+    void delete(int id);
 
 }
